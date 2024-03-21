@@ -8,6 +8,7 @@ import java.util.Optional;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Component;
 import org.springframework.stereotype.Service;
+import org.springframework.transaction.annotation.Transactional;
 
 @Service
 @Component
@@ -23,6 +24,7 @@ public class MemberService {
     /**
      * 회원가입
      */
+    @Transactional
     public long join(Member member) {
        // 같은 이름이 있는중복회원 X
         validateDuplicateMember(member); // 중복 회원 검증
