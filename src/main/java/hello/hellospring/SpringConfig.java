@@ -24,11 +24,6 @@ public class SpringConfig {
             this.memberRepository = memberRepository;
         }
 
-//        @Autowired
-//        public SpringConfig(DataSource dataSource) {
-//        this.dataSource = dataSource;
-//    }
-
         @Bean
         public MemberService memberService() {
                 return new MemberService(memberRepository);
